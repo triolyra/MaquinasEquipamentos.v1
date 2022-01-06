@@ -19,28 +19,28 @@ import lombok.Setter;
 @NoArgsConstructor
 @Table(name = "TBGG087_SEGU_BEM")
 @PrimaryKeyJoinColumn(name = "idBem")
-public class SeguroEntity extends BemEntity{
-	
+public class SeguroEntity extends BemEntity {
+
 	private static final long serialVersionUID = -1419027394453736489L;
 
 	@Column(name = "NOM_SEGA")
 	private String nomeSeguradora;
-	
+
 	@Column(name = "NUM_CPF_CNPJ_SEGA", nullable = false)
 	private double numeroCpfOuCnpjSeguradora;
-	
+
 	@Column(name = "NUM_APOL_SEGU_BEM")
 	private double numeroApoliceSeguro;
-	
+
 	@Column(name = "IND_BENF_SEGU_BEM_BANC", nullable = false)
 	private char indicadorBeneficiarioSeguradora;
-	
+
 	@Column(name = "DAT_INIO_VIGE_APOL_SEGU_BEM", nullable = false)
 	private LocalDate dataInicioApolice;
-	
+
 	@Column(name = "DAT_FIM_VIGE_APOL_SEGU_BEM")
 	private LocalDate dataFimApolice;
-	
+
 	@Column(name = "DAT_RENO_APOL_SEGU_BEM")
 	private LocalDate dataRenovacaoApolice;
 }

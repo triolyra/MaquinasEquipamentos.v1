@@ -36,7 +36,7 @@ public class BemEntity implements Serializable {
 	private String idBem;
 
 	@Column(name = "COD_TIPO_BEM", nullable = false)
-	private final int idTipoBem = 7;
+	private int idTipoBem;
 
 	@Column(name = "DAT_HOR_CADT_RGTO", nullable = false)
 	private LocalDate dataDoCadastro;
@@ -48,7 +48,7 @@ public class BemEntity implements Serializable {
 	private String idUsuarioResponsavel;
 
 	@Column(name = "IND_VLRZ_MANU", nullable = false)
-	private final char indicadorValorizacaoManual = 'S';
+	private char indicadorValorizacaoManual;
 
 	@Column(name = "VLR_ATUL_BEM", nullable = false)
 	private double valorAtualDoBem;

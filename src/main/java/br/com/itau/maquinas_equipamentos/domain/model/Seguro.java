@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 public class Seguro {
 
 	private String idBem; // pk (chave estrangeira que extende de bem)
-	private int idTipoBem; //pk, fk
-	
+	private int idTipoBem; // pk, fk
+
 	private String nomeSeguradora;
 	private double numeroCpfOuCnpjSeguradora;
 	private double numeroApoliceSeguro;
@@ -19,4 +19,5 @@ public class Seguro {
 	private LocalDate dataInicioApolice;
 	private LocalDate dataFimApolice;
 	private LocalDate dataRenovacaoApolice;
+	
 }
