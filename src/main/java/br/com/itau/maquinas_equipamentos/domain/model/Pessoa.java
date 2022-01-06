@@ -1,17 +1,13 @@
 package br.com.itau.maquinas_equipamentos.domain.model;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Data
+@Getter
 @NoArgsConstructor
 public class Pessoa {
-
-	private String idBem; // pk supostamente em outra entidade
-	//private int idTipoBem; //pk, fk
 	
-	private String idContratoPessoa; //pk, fk
-	private char idTipoPessoa;
+	private String idContratoPessoa; //pk 
 	private int idTipoRelacionamentoGarantiaPessoa; //sempre vai ser 10, terceiro garantidor
 	
 	private double cpfOuCnpj;

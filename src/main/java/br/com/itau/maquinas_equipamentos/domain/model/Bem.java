@@ -2,15 +2,17 @@ package br.com.itau.maquinas_equipamentos.domain.model;
 
 import java.time.LocalDate;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Data
+@Getter
 @NoArgsConstructor
 public class Bem {
 
 	private int idTipoBem = 7; //fk - vem de outra tabela só de tipo de bem
 	private String idBem; // pk
+	
+	//bem precisa ter um id composto???????
 
 	private LocalDate dataDoCadastro;
 	private LocalDate dataDaAlteracao;

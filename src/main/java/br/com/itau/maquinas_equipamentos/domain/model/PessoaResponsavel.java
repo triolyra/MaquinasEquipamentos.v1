@@ -10,4 +10,6 @@ public class PessoaResponsavel {
 	private String idBem;
 	private int idTipoBem;
 	private String idContratoPessoa;
+	
+	//classe só com id composto
 }

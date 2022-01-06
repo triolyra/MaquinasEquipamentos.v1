@@ -1,14 +1,14 @@
 package br.com.itau.maquinas_equipamentos.domain.model;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Data
+@Getter
 @NoArgsConstructor
 public class Endereco {
 
-	private String idBem; // pk
-	private int idTipoBem; //pk, fk
+	private String idBem; // pk (chave estrangeira que extende de bem)
+	private int idTipoBem; // fk
 	
 	private String cep;
 	private String logradouro;
