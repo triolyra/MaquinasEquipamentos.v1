@@ -12,7 +12,7 @@ import br.com.itau.maquinas_equipamentos.port.repository.BemRepository;
 public class BemRepositoryImpl implements BemRepository{
 
 	@Autowired private BemJpaRepository bemJpaRepository;
-	
+
 	private BemMapper bemMapper;
 
 	@Override

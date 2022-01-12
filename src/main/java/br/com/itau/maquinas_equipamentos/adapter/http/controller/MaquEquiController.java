@@ -19,10 +19,10 @@ public class MaquEquiController {
 
 	@Autowired
 	private IncluirBem incluirBem;
-	
+
 	@PostMapping("/incluir")
 	public ResponseEntity<BemDto> incluirBem(@RequestBody BemDto bem) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(incluirBem.incluir(bem));
 	}
-	
+
 }

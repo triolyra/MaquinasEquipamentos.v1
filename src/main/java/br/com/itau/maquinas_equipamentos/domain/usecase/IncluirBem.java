@@ -10,15 +10,14 @@ import br.com.itau.maquinas_equipamentos.port.dto.BemDto;
 import br.com.itau.maquinas_equipamentos.port.mapper.BemMapper;
 import br.com.itau.maquinas_equipamentos.port.repository.BemRepository;
 
-@Named
 @Component
 public class IncluirBem {
 
 	private final BemRepository bemRepository;
-	
+
 	private BemMapper bemMapper;
-	
-	@Inject
+
+	//@Inject
 	public IncluirBem (BemRepository bemRepository, BemMapper bemMapper) {
 		this.bemRepository = bemRepository;
 		this.bemMapper = bemMapper;

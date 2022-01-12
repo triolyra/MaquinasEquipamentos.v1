@@ -12,6 +12,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Getter
 @Setter
@@ -22,21 +23,22 @@ import lombok.ToString;
 @EqualsAndHashCode
 public class BemDto {
 
+	@Autowired
 	private int idTipoBem;
 	private String idBem;
-	
+
 	@NotNull(message = "Não pode ser nulo")
 	private LocalDate dataDoCadastro;
-	
+
 	@NotNull(message = "Não pode ser nulo")
 	private LocalDate dataDaAlteracao;
-	
+
 	@NotNull(message = "Não pode ser nulo")
 	private String idUsuarioResponsavel;
-	
+
 	@NotNull(message = "Não pode ser nulo")
 	private char indicadorValorizacaoManual;
-	
+
 	@NotNull(message = "Não pode ser nulo")
 	private double valorAtualDoBem;
 }
