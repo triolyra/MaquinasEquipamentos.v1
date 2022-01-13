@@ -3,8 +3,8 @@ package br.com.itau.maquinas_equipamentos.adapter.datastore.entity;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -18,11 +18,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "TBGG087_SEGU_BEM")
-@PrimaryKeyJoinColumn(name = "idBem")
-public class SeguroEntity extends BemEntity {
+public class SeguroEntity {
 
-	private static final long serialVersionUID = -1419027394453736489L;
-
+	@EmbeddedId private BemMaquEntityPK pk;
+	
 	@Column(name = "NOM_SEGA")
 	private String nomeSeguradora;
 

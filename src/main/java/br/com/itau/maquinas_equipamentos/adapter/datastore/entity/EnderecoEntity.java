@@ -1,8 +1,8 @@
 package br.com.itau.maquinas_equipamentos.adapter.datastore.entity;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -16,11 +16,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "TBGG082_ENDE_BEM")
-@PrimaryKeyJoinColumn(name = "idBem")
-public class EnderecoEntity extends BemEntity {
+public class EnderecoEntity {
 
-	private static final long serialVersionUID = -4894023116197130940L;
-
+	@EmbeddedId private BemMaquEntityPK pk;
+	
 	@Column(name = "ID_CEP_LOGR_BEM")
 	private String cep;
 
