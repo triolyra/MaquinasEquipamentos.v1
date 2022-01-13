@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.itau.maquinas_equipamentos.domain.usecase.IncluirBem;
+import br.com.itau.maquinas_equipamentos.domain.usecase.IncluirBemMaqu;
 import br.com.itau.maquinas_equipamentos.port.dto.BemDto;
 import lombok.RequiredArgsConstructor;
 
@@ -21,12 +21,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class MaquEquiController {
 
-	private final IncluirBem incluirBem;
+	private final IncluirBemMaqu incluirBemMaqu;
 	
 	@PostMapping("/incluir")
 	@Transactional
 	public ResponseEntity<BemDto> post(@Valid @RequestBody BemDto bemDto){
-		return ResponseEntity.status(HttpStatus.CREATED).body(incluirBem.execute(bemDto));
+		return ResponseEntity.status(HttpStatus.CREATED).body(incluirBemMaqu.execute(bemDto));
 	}
 	
 }

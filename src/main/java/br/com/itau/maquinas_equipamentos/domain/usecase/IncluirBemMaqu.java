@@ -10,13 +10,13 @@ import br.com.itau.maquinas_equipamentos.port.mapper.MapperFactory;
 import br.com.itau.maquinas_equipamentos.port.repository.BemRepository;
 
 @Named
-public class IncluirBem {
+public class IncluirBemMaqu {
 
 	private final BemRepository bemRepository;
 	private final BemMapper bemMapper = MapperFactory.newInstance(BemMapper.class);
 	
 	@Inject
-	public IncluirBem(BemRepository bemRepository) {
+	public IncluirBemMaqu(BemRepository bemRepository) {
 		this.bemRepository = bemRepository;
 	}
 	
