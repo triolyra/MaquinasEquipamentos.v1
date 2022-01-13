@@ -16,7 +16,8 @@
 	<description>API de Máquinas e Equipamentos</description>
 	<properties>
 		<java.version>11</java.version>
-		<m2e.apt.activation>jdt_apt</m2e.apt.activation>
+		<org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+		<org.mapstruct.extensions.spring.version>0.0.3</org.mapstruct.extensions.spring.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -60,12 +61,12 @@
 		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
-			<version>1.4.2.Final</version>
+			<version>${org.mapstruct.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mapstruct.extensions.spring</groupId>
 			<artifactId>mapstruct-spring-annotations</artifactId>
-			<version>0.0.3</version>
+			<version>${org.mapstruct.extensions.spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.inject</groupId>
@@ -77,9 +78,16 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>${org.mapstruct.version}</version>
+						</path>
+					</annotationProcessorPaths>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
