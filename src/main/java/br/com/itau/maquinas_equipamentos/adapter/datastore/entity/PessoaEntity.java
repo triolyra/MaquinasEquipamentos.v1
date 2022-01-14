@@ -1,10 +1,8 @@
 package br.com.itau.maquinas_equipamentos.adapter.datastore.entity;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -19,11 +17,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Table(name = "TBGG081_CTTO_PESS")
 public class PessoaEntity {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "COD_IDT_CTTO_PESS", nullable = false)
-	private String idContratoPessoa;
+	
+	@EmbeddedId private PessoaResponsavelEntityPK pk;
 
 	@Column(name = "COD_TIPO_RLMT_GARA_PESS", nullable = false)
 	private int idTipoRelacionamentoGarantiaPessoa;
