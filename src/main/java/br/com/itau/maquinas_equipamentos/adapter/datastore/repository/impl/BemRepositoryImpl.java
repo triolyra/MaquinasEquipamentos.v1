@@ -42,8 +42,13 @@ public class BemRepositoryImpl implements BemRepository {
 
 	@Override
 	public Optional<Bem> consultarPorId(String idBem, int idTipoBem) {
-		// TODO Auto-generated method stub
-		return null;
+		var bemPk = bemMapper.toEntityPk(idBem, idTipoBem);
+		var bemEntityOptional = bemJpaRepository.findById(bemPk);
+		if (bemEntityOptional.isEmpty()) {
+			return Optional.empty();
+			}
+		var bem = bemMapper.fromBemEntity(bemEntityOptional.get());
+		return Optional.of(bem);
 	}
 
 	@Override
