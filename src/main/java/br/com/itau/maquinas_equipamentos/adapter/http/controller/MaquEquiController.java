@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.itau.maquinas_equipamentos.domain.usecase.IncluirBemMaqu;
 import br.com.itau.maquinas_equipamentos.port.dto.BemDto;
+import br.com.itau.maquinas_equipamentos.port.dto.EnderecoDto;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -25,8 +26,14 @@ public class MaquEquiController {
 	
 	@PostMapping("/incluir")
 	@Transactional
-	public ResponseEntity<BemDto> post(@Valid @RequestBody BemDto bemDto){
+	public ResponseEntity<BemDto> incluirBem(@Valid @RequestBody BemDto bemDto){
 		return ResponseEntity.status(HttpStatus.CREATED).body(incluirBemMaqu.execute(bemDto));
+	}
+	
+	@PostMapping("/incluir/endereco")
+	@Transactional
+	public ResponseEntity<EnderecoDto> incluirEndereco(@Valid @RequestBody EnderecoDto enderecoDto){
+		return ResponseEntity.status(HttpStatus.CREATED).body(incluirBemMaqu.execute(enderecoDto));
 	}
 	
 }

@@ -26,5 +26,9 @@ public class BemMaquEntityPK implements Serializable{
 
 	@Column(name = "COD_TIPO_BEM", nullable = false, updatable = false)
 	private int idTipoBem;
+	
+	public String toString() {
+		return "BemMaquPK (id_bem= idBem, id_tipo_bem = idTipoBem)"; 
+	}
 
 }

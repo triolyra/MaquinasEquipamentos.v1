@@ -4,18 +4,18 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Component;
 
-import br.com.itau.maquinas_equipamentos.domain.model.Bem;
+import br.com.itau.maquinas_equipamentos.domain.model.Endereco;
 
 @Component
-public interface BemRepository {
+public interface EnderecoRepository {
 
-	Bem incluir(Bem bem);
+	Endereco incluir(Endereco endereco);
 
-	Bem atualizar(Bem bem);
+	Endereco atualizar(Endereco endereco);
 
 	void deletar(String idBem, int idTipoBem);
 
-	Optional<Bem> consultarPorId(String idBem, int idTipoBem);
+	Optional<Endereco> consultarPorId(String idBem, int idTipoBem);
 
 	Long verificarSeExiste(String idBem, int idTipoBem);
 }

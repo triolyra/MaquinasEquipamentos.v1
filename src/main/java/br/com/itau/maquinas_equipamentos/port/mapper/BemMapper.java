@@ -5,21 +5,30 @@ import org.mapstruct.Mapping;
 
 import br.com.itau.maquinas_equipamentos.adapter.datastore.entity.BemEntity;
 import br.com.itau.maquinas_equipamentos.adapter.datastore.entity.BemMaquEntityPK;
+import br.com.itau.maquinas_equipamentos.adapter.datastore.entity.EnderecoEntity;
 import br.com.itau.maquinas_equipamentos.domain.model.Bem;
+import br.com.itau.maquinas_equipamentos.domain.model.Endereco;
 import br.com.itau.maquinas_equipamentos.port.dto.BemDto;
+import br.com.itau.maquinas_equipamentos.port.dto.EnderecoDto;
 
 @Mapper
 public interface BemMapper {
 
-	BemDto toDto(Bem bem);
-	
 	BemMaquEntityPK toEntityPk(String idBem, int idTipoBem);
+	
+	BemDto toBemDto(Bem bem);
 	
 	@Mapping(target= "pk.idBem", source = "idBem")
 	@Mapping(target= "pk.idTipoBem", source = "idTipoBem")
-	BemEntity toEntity(Bem bem);
+	BemEntity toBemEntity(Bem bem);
 	
-	default Bem fromDto(BemDto bemDto) {
+	EnderecoDto toEnderecoDto(Endereco endereco);
+	
+	@Mapping(target= "pk.idBem", source = "idBem")
+	@Mapping(target= "pk.idTipoBem", source = "idTipoBem")
+	EnderecoEntity toEnderecoEntity(Endereco endereco);
+	
+	default Bem fromBemDto(BemDto bemDto) {
 		return new Bem(
 				bemDto.getIdBem(),
 				bemDto.getIdTipoBem(),
@@ -30,7 +39,7 @@ public interface BemMapper {
 				bemDto.getValorAtualDoBem());
 	}
 	
-	default Bem fromEntity(BemEntity bemEntity) {
+	default Bem fromBemEntity(BemEntity bemEntity) {
 		return new Bem(
 			bemEntity.getPk().getIdBem(),
 			bemEntity.getPk().getIdTipoBem(),
@@ -40,4 +49,22 @@ public interface BemMapper {
 			bemEntity.getIndicadorValorizacaoManual(),
 			bemEntity.getValorAtualDoBem());
 }
+	
+	default Endereco fromEnderecoDto(EnderecoDto enderecoDto) {
+		return new Endereco(
+				enderecoDto.getIdBem(),
+				enderecoDto.getIdTipoBem(),
+				enderecoDto.getCep(),
+				enderecoDto.getLogradouro(),
+				enderecoDto.getComplemento());
+	}
+	
+	default Endereco fromEnderecoEntity(EnderecoEntity enderecoEntity) {
+		return new Endereco(
+				enderecoEntity.getPk().getIdBem(),
+				enderecoEntity.getPk().getIdTipoBem(),
+				enderecoEntity.getCep(),
+				enderecoEntity.getLogradouro(),
+				enderecoEntity.getComplemento());
+	}
 }
