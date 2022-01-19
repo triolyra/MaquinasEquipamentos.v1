@@ -30,8 +30,7 @@ public class EnderecoRepositoryImpl implements EnderecoRepository {
 
 	@Override
 	public Endereco atualizar(Endereco endereco) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.incluir(endereco);
 	}
 
 	@Override

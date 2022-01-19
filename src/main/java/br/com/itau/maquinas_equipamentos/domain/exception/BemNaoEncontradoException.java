@@ -4,8 +4,8 @@ import br.com.itau.maquinas_equipamentos.adapter.datastore.entity.BemMaquEntityP
 
 @SuppressWarnings("serial")
 public class BemNaoEncontradoException extends NegocioException {
-	
+
 	public BemNaoEncontradoException(String idBem, int idTipoBem) {
-		super (new BemMaquEntityPK(idBem, idTipoBem).toString());
+		super(new BemMaquEntityPK(idBem, idTipoBem).toString());
 	}
 }

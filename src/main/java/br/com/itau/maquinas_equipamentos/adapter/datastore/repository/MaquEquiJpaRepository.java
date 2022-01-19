@@ -5,10 +5,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import br.com.itau.maquinas_equipamentos.adapter.datastore.entity.BemMaquEntityPK;
-import br.com.itau.maquinas_equipamentos.adapter.datastore.entity.EnderecoEntity;
+import br.com.itau.maquinas_equipamentos.adapter.datastore.entity.MaquEquiEntity;
 
-public interface EnderecoJpaRepository
-		extends JpaRepository<EnderecoEntity, BemMaquEntityPK>, JpaSpecificationExecutor<EnderecoEntity> {
+public interface MaquEquiJpaRepository
+		extends JpaRepository<MaquEquiEntity, BemMaquEntityPK>, JpaSpecificationExecutor<MaquEquiEntity> {
 
 	Long findByPk(BemMaquEntityPK pk);
 }

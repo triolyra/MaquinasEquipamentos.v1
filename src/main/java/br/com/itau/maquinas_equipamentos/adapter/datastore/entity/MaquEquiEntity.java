@@ -25,8 +25,8 @@ public class MaquEquiEntity{
 	
 	//private int finalidadeDeUso;
 	
-	@Column(name = "NUM_IDEF_MAQU_EQUI", nullable = false)
-	private int numeroSequencial;
+	//@Column(name = "NUM_IDEF_MAQU_EQUI", nullable = false)
+	//private int numeroSequencial;
 	
 	@Column(name = "COD_NUM_SRIE_MAQU_EQUI", nullable = false)
 	private String numeroDeSerie;

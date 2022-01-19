@@ -30,8 +30,7 @@ public class BemRepositoryImpl implements BemRepository {
 
 	@Override
 	public Bem atualizar(Bem bem) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.incluir(bem);
 	}
 
 	@Override

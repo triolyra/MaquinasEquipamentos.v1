@@ -29,4 +29,8 @@ public class PessoaResponsavelEntityPK implements Serializable {
 	
 	@Column(name = "COD_IDT_CTTO_PESS", nullable = false)
 	private String idContratoPessoa;
+	
+	public String toString() {
+		return "PessoaRespPK (id_bem = idBem, id_tipo_bem = idTipoBem, id_Contrato_Pessoa = idContratoPessoa)"; 
+	}
 }
