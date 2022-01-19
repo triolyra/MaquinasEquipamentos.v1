@@ -28,17 +28,22 @@ public class PessoaEntity {
 	@Column(name = "COD_TIPO_RLMT_GARA_PESS", nullable = false)
 	private int idTipoRelacionamentoGarantiaPessoa;
 
-	@Column(name = "COD_TIPO_PESS_CTTO_GRUP")
-	private char idTipoPessoaContratoGrupo;
+	//@Column(name = "COD_TIPO_PESS_CTTO_GRUP")
+	//private char idTipoPessoaContratoGrupo;
 
-	@Column(name = "NUM_CPF_CNPJ_CTTO_GRUP")
-	private double cpfOuCnpjContratoGrupo;
+	//@Column(name = "NUM_CPF_CNPJ_CTTO_GRUP")
+	//private double cpfOuCnpjContratoGrupo;
 
 	@Column(name = "COD_TIPO_PESS_CTT")
 	private char idTipoPessoaContrato;
+	
+
 
 	@Column(name = "NUM_CPF_CNPJ_CTTO_PESS")
-	private double cpfOuCnpjContratoPessoa;
+	private double cpfOuCnpj;
+	
+	//@Column(name = "NUM_CPF_CNPJ_CTTO_PESS")
+	//private double cpfOuCnpjContratoPessoa;
 
 	@Column(name = "NOM_CTTO_PESS")
 	private String nome;
@@ -52,4 +57,7 @@ public class PessoaEntity {
 	@Column(name = "NUM_TEL_CTTO_PESS")
 	private double telefone;
 
-}
+	
+	}
+
+

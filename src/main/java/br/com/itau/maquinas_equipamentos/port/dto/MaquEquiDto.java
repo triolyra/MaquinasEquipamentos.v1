@@ -2,6 +2,7 @@ package br.com.itau.maquinas_equipamentos.port.dto;
 
 import javax.validation.constraints.NotNull;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -20,7 +21,7 @@ public class MaquEquiDto {
 	
 	//private String idGarantia;
 		private String idBem;
-		private String idTipoBem;
+		private int idTipoBem;
 		private String idTipoMaquEqui;
 		
 		//private int finalidadeDeUso;

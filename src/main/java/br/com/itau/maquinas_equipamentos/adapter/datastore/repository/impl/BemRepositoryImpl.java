@@ -17,8 +17,43 @@ public class BemRepositoryImpl implements BemRepository{
 
 	@Override
 	public Bem incluir(Bem bem) {
+<<<<<<< Updated upstream
 		if (bem == null) throw new NegocioException("O bem não pode ser nulo");
 		var bemEntity = bemJpaRepository.save(bemMapper.toEntity(bem));
 		return bemMapper.fromEntity(bemEntity);
+=======
+		if (bem == null)
+			throw new NegocioException("O bem não pode ser nulo");
+		var bemEntity = bemJpaRepository.save(bemMapper.toBemEntity(bem));
+		return bemMapper.fromBemEntity(bemEntity);
+	}
+
+	@Override
+	public Bem atualizar(Bem bem) {
+		return this.incluir(bem);
+	}
+
+	@Override
+	public void deletar(String idBem, int idTipoBem) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Optional<Bem> consultarPorId(String idBem, int idTipoBem) {
+		var bemPk = bemMapper.toEntityPk(idBem, idTipoBem);
+		var bemEntityOptional = bemJpaRepository.findById(bemPk);
+		if (bemEntityOptional.isEmpty()) {
+			return Optional.empty();
+			}
+		var bem = bemMapper.fromBemEntity(bemEntityOptional.get());
+		return Optional.of(bem);
+	}
+
+	@Override
+	public Long verificarSeExiste(String idBem, int idTipoBem) {
+		// TODO Auto-generated method stub
+		return null;
+>>>>>>> Stashed changes
 	}
 }

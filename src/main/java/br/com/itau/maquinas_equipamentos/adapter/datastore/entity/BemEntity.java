@@ -52,4 +52,12 @@ public class BemEntity implements Serializable {
 
 	@Column(name = "VLR_ATUL_BEM", nullable = false)
 	private double valorAtualDoBem;
+<<<<<<< Updated upstream
 }
+=======
+	
+	
+	//lascouuuuuuuuuuuuuuuuu
+	
+}
+>>>>>>> Stashed changes

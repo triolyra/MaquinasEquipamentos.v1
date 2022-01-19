@@ -7,9 +7,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MaquEqui {
 
+	public MaquEqui(String idBem, int idTipoBem, String idTipoMaquEqui, String numeroDeSerie,
+			double numeroNotaFiscal, String descricaoCompl) {
+		this.idBem = idBem;
+		this.idTipoBem = idTipoBem;
+		this.idTipoMaquEqui = idTipoMaquEqui;
+		this.numeroDeSerie = numeroDeSerie;
+		this.numeroNotaFiscal = numeroNotaFiscal;
+		this.descricaoCompl = descricaoCompl;
+	}
+
 	// private String idGarantia; //fk - vem da api de garantia
 	private String idBem; // pk (chave estrangeira que extende de bem)
-	private String idTipoBem; // fk - vem da tabela de bem, tipo 7
+	private int idTipoBem; // fk - vem da tabela de bem, tipo 7
 	private String idTipoMaquEqui; // fk - vem da tabela de tipo de máquina e equipamento
 
 	// bem, tipoBem e tipoMaqu seria um id composto?
@@ -21,4 +31,5 @@ public class MaquEqui {
 	private double numeroNotaFiscal;
 	// private String dataNotaFiscal; //ainda não tem dentro do db
 	private String descricaoCompl;
+
 }

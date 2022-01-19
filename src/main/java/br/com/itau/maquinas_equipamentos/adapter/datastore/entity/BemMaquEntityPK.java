@@ -1,9 +1,7 @@
 package br.com.itau.maquinas_equipamentos.adapter.datastore.entity;
 
-public class PessoaResponsavelEntityPK {
+import java.io.Serializable;
 
-<<<<<<< Updated upstream
-=======
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -19,9 +17,9 @@ import lombok.Setter;
 @Builder
 @Getter
 @Setter
-public class PessoaResponsavelEntityPK implements Serializable {
+public class BemMaquEntityPK implements Serializable{
 	
-	private static final long serialVersionUID = -9033685707900808404L;
+	private static final long serialVersionUID = -303025669985788188L;
 
 	@Column(name = "COD_BEM", nullable = false, updatable = false)
 	private String idBem;
@@ -29,11 +27,7 @@ public class PessoaResponsavelEntityPK implements Serializable {
 	@Column(name = "COD_TIPO_BEM", nullable = false, updatable = false)
 	private int idTipoBem;
 	
-	@Column(name = "COD_IDT_CTTO_PESS", nullable = false)
-	private String idContratoPessoa;
-	
 	public String toString() {
-		return "PessoaRespPK (id_bem = idBem, id_tipo_bem = idTipoBem, id_Contrato_Pessoa = idContratoPessoa)"; 
+		return "BemMaquPK (id_bem = idBem, id_tipo_bem = idTipoBem)"; 
 	}
->>>>>>> Stashed changes
 }
